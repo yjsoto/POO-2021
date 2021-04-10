@@ -41,12 +41,22 @@ public class Pooflix {
         return (List<Material>) material;
 
     }
-    public List<Material> BuscarProducto() {
-     return null;
+    public List<Material> BuscarProducto(String nombre) {
+        Material material = this.materiales.stream()
+                .filter(code -> code.getNombre() == nombre)
+                .findFirst()
+                .orElse(null);
+        return (List<Material>) material;
+
     }
 
     public List<Material> BuscarProductoxtipo(String tipo) {
-     return null;
+        Material material = this.materiales.stream()
+                .filter(code -> code.getTipo() == tipo)
+                .findFirst()
+                .orElse(null);
+        return (List<Material>) material;
+     
     }
     public int calcularDuracionTotal(int duracion){
         return 0;
